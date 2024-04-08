@@ -11,6 +11,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+  <!--Smtp JS CDN-->
+  
 </head>
 
 <body>
@@ -102,7 +104,7 @@
     <!-- services section-->
     <section id="services">
         <div class="container">
-            <h1 class="text-center">Services</h1>
+            <h1 class="text-center">Servicios</h1>
             <div class="row">
                 <div class="col-lg-4 mt-4">
                     <div class="card servicesText">
@@ -140,7 +142,7 @@
                 </div>
             </div>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-4 mt-4">
                     <div class="card servicesText">
                         <div class="card-body">
@@ -151,9 +153,9 @@
                             </p>
                         </div>
                     </div>  
-                </div>
+                </div> -->
 
-                <div class="col-lg-4 mt-4">
+                <!-- <div class="col-lg-4 mt-4">
                     <div class="card servicesText">
                         <div class="card-body">
                             <i class='fas servicesIcon fa-shield-alt'></i>
@@ -163,8 +165,8 @@
                             </p>
                         </div>
                     </div>  
-                </div>
-
+                </div> -->
+<!-- 
                 <div class="col-lg-4 mt-4">
                     <div class="card servicesText">
                         <div class="card-body">
@@ -175,7 +177,7 @@
                             </p>
                         </div>
                     </div>  
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -185,13 +187,25 @@
             <h1 class="text-center">Portfolio</h1>
             <div class="row">
                 <div class="col-lg-4 mt-4">
+                    <div class="card portfolioContent">
+                        <img class="card-img-top" src="./images/mylandingpage.png" alt="Card image" style="width:100%">
+                        <div class="card-body">
+                            <h4 class="card-title">Producto Landing Page</h4>
+                            <p class="card-text">Landing Page diseñada para la inscripción a un programa de puntos y beneficios de una marca. Hecha con HTLM, CSS y JS vanilla. </p>
+                            <div class="text-center">
+                                <a href="https://leamontoya19.github.io/proyecto-uno/" class="btn btn-success">Link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4">
                     <div class="card">
-                        <img class="card-img-top" src="images/portfolioImage1.jpg" alt="Card image" style="width:100%">
+                        <img class="card-img-top" src="./images/happyphone.png" alt="Card image" style="width:100%">
                         <div class="card-body">
-                            <h4 class="card-title">YouTube Clone</h4>
-                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <h4 class="card-title">E-commerce "HappyPhone"</h4>
+                            <p class="card-text">Este website es un e-commerce de comercialización de teléfonos moviles, desarrollado con HTML, CSS y JavaScript Vanilla</p>
                             <div class="text-center">
-                                <a href="#" class="btn btn-success">Link</a>
+                                <a href="https://danielazapata0724.github.io/Proyecto-5---HappyPhone/" class="btn btn-success">Link</a>
                             </div>
                         </div>
                     </div>
@@ -199,25 +213,12 @@
 
                 <div class="col-lg-4 mt-4">
                     <div class="card portfolioContent">
-                        <img class="card-img-top" src="images/portfolioImage4.jpg" alt="Card image" style="width:100%">
+                        <img class="card-img-top" src="./images/chicharrica.png" alt="Card image" style="width:100%">
                         <div class="card-body">
-                            <h4 class="card-title">Quiz App</h4>
-                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            <h4 class="card-title"> E-commerce "Miguel Meixoeiro Fotografía"</h4>
+                            <p class="card-text">E-commerce del fotográfo Miguel Meixoeiro. Desarollado con React</p>
                             <div class="text-center">
-                                <a href="#" class="btn btn-success">Link</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 mt-4">
-                    <div class="card portfolioContent">
-                        <img class="card-img-top" src="images/portfolioImage3.jpg" alt="Card image" style="width:100%">
-                        <div class="card-body">
-                            <h4 class="card-title">Product Landing Page</h4>
-                            <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            <div class="text-center">
-                                <a href="#" class="btn btn-success">Link</a>
+                                <a href="https://react-project-pyl3tiavo-leamontoya19s-projects.vercel.app/" class="btn btn-success">Link</a>
                             </div>
                         </div>
                     </div>
@@ -268,7 +269,7 @@
     <!-- contact section-->
     <section id="contact">
         <div class="container mt-3 contactContent">
-            <h1 class="text-center">Contact Me</h1>
+            <h1 class="text-center">Contacto</h1>
 
             <div class="row mt-4">
                 <div class="col-lg-6">
@@ -286,23 +287,39 @@
 
                 <div class="col-lg-6">
                     <!-- form fields -->
-                    <form>
-                        <input type="text" class="form-control form-control-lg" placeholder="Name">
-                        <input type="email" class="form-control mt-3" placeholder="Email">
-                        <input type="text" class="form-control mt-3" placeholder="Subject">
+                    <form onsubmit="sendEmail(); reset(); return false;">
+                        <input type="text" class="form-control form-control-lg" placeholder="Nombre">
+                        <input type="email" id="email" class="form-control mt-3" placeholder="Email">
+                        <input type="text" class="form-control mt-3" placeholder="móvil">
+                        <input type="text" class="form-control mt-3" placeholder="Asunto">
                         <div class="mb-3 mt-3">
-                            <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Project Details"></textarea>
+                            <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Detalles del proyecto"></textarea>
                         </div>
                     </form>
-                    <button type="button" class="btn btn-success mt-3">Contact Me</button>
+                    <button type="submit" class="btn btn-success mt-3">Contáctame</button>
                     
                 </div>
 
             </div>
         </div>
     </section>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail(){
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "leamontoyamua@gmail.com",
+            Password : "Maquilladora2022",
+            To : 'leamontoya19@gmail.com',
+            From : document.getElementById("email").ariaValueNow,
+            Subject : "New Contact Form Enquiry",
+            Body : "And this is the body"
+       }).then(
+       message => alert("Mensaje enviado")
+       );
+     } 
+    </script>
 
-    
-    <script src="script/script.js"></script>
+    <script src="./script/script.js"></script>
 </body>
 </html>
